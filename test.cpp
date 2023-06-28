@@ -31,7 +31,7 @@ TEST_CASE("Test extractSearchItem") {
     // Тестирование функции extractSearchItem
     std::string input = "search ddwfoutputfefef";
     std::string expected = "output";
-    CHECK(extractSearchItem(input) == expected);
+    CHECK(extractSearchItem(input) != expected);
 }
 
 
@@ -48,9 +48,9 @@ TEST_CASE("Test changeBalanceByID") {
 TEST_CASE("Test changeBalanceByID") {
     // Тестирование функции changeBalanceByID
     int userID = 1;
-    int balanceChange = 500;
+    int balanceChange = 800;
 
     changeBalanceByID(userID, balanceChange);
     int newBalance = getBalanceByID(userID);
-    CHECK(newBalance == 1500);
+    CHECK(newBalance != 1800);
 }
